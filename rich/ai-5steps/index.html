@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<title>AI 時代，我做投資功課的 5 個步驟 — Rich Cheung 張富有</title>
+<meta name="description" content="工具負責整理，判斷留給自己。Rich Cheung 用 AI 做投資研究的 5 個步驟，附贈可直接複製的 AI 投資研究守則。">
+<meta name="author" content="Rich Cheung 張富有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI 時代，我做投資功課的 5 個步驟">
+<meta property="og:description" content="工具負責整理，判斷留給自己。附贈可直接複製的 AI 投資研究守則。">
+<meta property="og:image" content="../../assets/rich/banner.png">
+<style>
+  :root{
+    /* ── Rich 官方品牌色 ──
+       來源：品牌/智富品牌知識Hub/品牌/carousel-design.md
+             （鏡像自 colors_and_type.css，唯一值真相源）        */
+    --navy:#0A2751;   /* 共享主藍・母品牌識別。白底 14.77:1 */
+    --gold:#F3CE6A;   /* Rich 輸出金（finals 用這個，非 #FFE48F）
+                         白底僅 1.52:1 → 只做裝飾與底色，不當文字 */
+    --paper:#F4F7FE;  /* 官方淺底 */
+
+    /* 以下兩色為官方 token 的明度調整版，非官方色序列 */
+    --rule:#DCE5F3;   /* 官方 rule #4C78B8 的淡化版，用於髮絲線 */
+    --muted:#63788F;  /* 官方 muted #9FB0C4 加深至 4.55:1，供小字使用 */
+
+    --bg:#ffffff;
+    --ink:var(--navy);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;background:#fff}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Hiragino Sans TC","Microsoft JhengHei",sans-serif;
+    font-size:17px;
+    line-height:1.85;
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:44px 22px 80px;
+  }
+
+  /* ---- header ---- */
+  header{margin-bottom:40px}
+  h1{
+    font-size:clamp(26px,6.2vw,37px);
+    line-height:1.35;
+    letter-spacing:-.01em;
+    margin:0 0 12px;
+    font-weight:700;
+    color:var(--ink);
+    text-wrap:balance;
+  }
+  .sub{
+    font-size:clamp(17px,3.6vw,20px);
+    color:var(--navy);
+    margin:0 0 26px;
+    font-weight:600;
+    line-height:1.6;
+  }
+  .banner{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0 0 30px;
+    border-radius:10px;
+  }
+  .lede{
+    font-size:18px;
+    line-height:1.8;
+    border-left:3px solid var(--gold);
+    padding:2px 0 2px 18px;
+    margin:0;
+  }
+  .lede p{margin:0 0 14px;color:var(--ink)}
+  .lede p:last-child{margin:0}
+
+  /* ---- steps ---- */
+  .step{
+    border-top:1px solid var(--rule);
+    padding-top:34px;
+    margin-top:38px;
+  }
+  .step-num{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.14em;
+    color:var(--navy);
+    background:var(--gold);
+    padding:5px 13px;
+    border-radius:100px;
+    margin-bottom:14px;
+  }
+  h2{
+    font-size:clamp(20px,4.6vw,25px);
+    line-height:1.5;
+    margin:0 0 18px;
+    font-weight:700;
+    letter-spacing:-.005em;
+    color:var(--ink);
+  }
+  p{margin:0 0 18px;color:var(--navy)}
+  .step p:last-child{margin-bottom:0}
+
+  /* ---- closing ---- */
+  .closing{
+    border-top:1px solid var(--rule);
+    margin-top:44px;
+    padding-top:34px;
+  }
+  .closing p{color:var(--ink)}
+
+  /* ---- disclaimer ---- */
+  .disclaimer{
+    margin-top:34px;
+    padding-top:22px;
+    border-top:1px solid var(--rule);
+    font-size:13.5px;
+    line-height:1.8;
+    color:var(--muted);
+  }
+  .disclaimer p{color:inherit;margin:0}
+
+  /* ---- signature ----
+     原圖 1920x1080，墨跡實際只在 x520–1418 / y340–692（量測值）。
+     四周留白用「視窗」裁掉，圖檔本身不動。
+     視窗比例 = 898:352；圖放大到 1920/898 = 213.81%，
+     再往左推 520/898 = 57.91%、往上推 340/352 = 96.59%。       */
+  .sign{margin-top:30px}
+  .sig{
+    position:relative;
+    width:250px;
+    max-width:70%;
+    aspect-ratio:898 / 352;
+    overflow:hidden;
+    margin:0 0 10px;
+  }
+  .sig img{
+    position:absolute;
+    width:213.81%;
+    max-width:none;
+    height:auto;
+    left:-57.91%;
+    top:-96.59%;
+  }
+  .sign-name{font-weight:700;margin:0 0 3px;font-size:17px;color:var(--ink)}
+  .sign-handle{margin:0;color:var(--muted);font-size:15px;letter-spacing:.02em;font-weight:600}
+
+  /* ---- bonus / prompt ---- */
+  .bonus{
+    margin-top:50px;
+    border:1px solid var(--rule);
+    border-top:3px solid var(--gold);
+    border-radius:4px 4px 16px 16px;
+    padding:30px 22px;
+    background:var(--paper);
+  }
+  .bonus-tag{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.14em;
+    color:var(--navy);
+    background:var(--gold);
+    padding:5px 13px;
+    border-radius:100px;
+    margin-bottom:14px;
+  }
+  .bonus h2{margin-bottom:14px}
+  .bonus > p{font-size:16px;margin-bottom:22px}
+
+  .prompt-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    background:#fff;
+    border:1px solid var(--rule);
+    border-bottom:none;
+    border-radius:12px 12px 0 0;
+    padding:11px 14px;
+  }
+  .prompt-label{
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:.06em;
+    font-weight:600;
+  }
+  .copy-btn{
+    font:inherit;
+    font-size:14px;
+    font-weight:600;
+    color:#fff;
+    background:var(--navy);
+    border:none;
+    border-radius:8px;
+    padding:9px 17px;
+    cursor:pointer;
+    white-space:nowrap;
+    min-height:38px;
+    transition:opacity .15s, background .15s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .copy-btn:active{opacity:.65}
+  .copy-btn.done{background:#2e7d4f}
+
+  pre{
+    margin:0;
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:0 0 12px 12px;
+    padding:18px 16px;
+    max-height:340px;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"PingFang TC",monospace;
+    font-size:13.5px;
+    line-height:1.75;
+    white-space:pre-wrap;
+    word-break:break-word;
+    color:var(--ink);
+    letter-spacing:0;
+  }
+
+  .note{
+    font-size:14.5px;
+    color:var(--muted);
+    margin:16px 0 0;
+    line-height:1.7;
+  }
+
+  @media (max-width:400px){
+    .wrap{padding:32px 17px 64px}
+    body{font-size:16.5px}
+    .prompt-head{flex-direction:column;align-items:stretch}
+    .copy-btn{width:100%}
+    .sig{width:210px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>AI 時代，我做投資功課的 5 個步驟</h1>
+    <p class="sub">工具負責整理，判斷留給自己</p>
+
+    <img class="banner" src="../../assets/rich/banner.png" alt="贏勢技術 Rich Cheung 張富有：AI 趨勢 X 強勢股 X 進出場紀律，把市場敍事，變成你的交易計劃">
+
+    <div class="lede">
+      <p>AI 讀財報比我快，整理資料比我齊。那我這個人，還剩下什麼？</p>
+      <p>這是我參加富途 AI 發佈會之後，重新想清楚的一件事。我把自己用 AI 做投資功課的順序，整理成 5 個步驟，分享給你。</p>
+    </div>
+  </header>
+
+  <section class="step">
+    <span class="step-num">STEP 1</span>
+    <h2>先想清楚你要問什麼，而非急著問「買什麼」</h2>
+    <p>許多投資者拿到 AI 工具，第一個念頭往往是：「這隻股票能買嗎？」或「AI，推薦我幾隻潛力股。」然而，我的順序卻不一樣。我會先花時間沉澱，釐清自己到底想搞懂這家公司的哪一件事？是想探究其業務的護城河，還是理解產業的成長邏輯，抑或是評估當前面臨的風險類型？</p>
+    <p>為什麼這一步最為關鍵？因為 AI 只會回答你提出的問題。問題若模糊不清，答案自然也含糊；問題若問偏了，AI 甚至會很有自信地將你帶往錯誤的方向。若未能事先釐清，你最終可能會得到一份看似完整，實則答非所問的資料。花費時間閱讀後，卻發現自己仍未解決最初的疑問。真正的投資功課，是在打開 AI 工具之前，先明確自己真正的研究目標。</p>
+  </section>
+
+  <section class="step">
+    <span class="step-num">STEP 2</span>
+    <h2>把重活交給 AI，把時間留給判斷與驗證</h2>
+    <p>當我明確了研究問題後，才會讓 AI 上場執行「重活」：整理資訊、閱讀大量財報、將零散的數據系統化排列。這些工作本質上是「搬運」，而非「判斷」。</p>
+    <p>幾年前，完成同樣一份研究，我需要親自一筆一筆爬梳資料，耗費數小時甚至數天的時間。現在，AI 能在極短時間內完成這些重複性高、耗時費力的任務。AI 幫我省下的時間，我會用來做只有人類才能做到的那部分：回頭驗證自己最初的問題，答案是否站得住腳；或者深入研究幾家同業，確認自己觀察到的現象並非特例。</p>
+  </section>
+
+  <section class="step">
+    <span class="step-num">STEP 3</span>
+    <h2>不照單全收，多問一句「這是不是真的」</h2>
+    <p>AI 給出的資訊，我從來不將其視為最終結論，而僅僅是研究的「起點」。儘管 AI 有時會表現得極為自信，但其內容仍可能存在偏差或過時。這一步的設立，是為了避免人類因工具過於便利而產生惰性，直接複製貼上 AI 的答案。</p>
+    <p>我的習慣是：當 AI 提供一個說法時，我會回頭尋找第二個獨立來源進行核對，確認資訊無誤後才會採納。具體而言，我會優先查閱公司官方公告、原始財報數據等第一手資料進行驗證；同一個問題，我也習慣拿去問另一個 AI 模型，讓它負責檢查前一個答案是不是真的、有沒有捏造或搞錯，兩邊交叉比對過才放心。這一步所投入的精力，正是你與「只會複製貼上」的投資者之間的核心差異。</p>
+  </section>
+
+  <section class="step">
+    <span class="step-num">STEP 4</span>
+    <h2>分辨哪些工具、哪些資訊，真正適合你</h2>
+    <p>AI 的功能極為全面，甚至能讓你打造專屬於自己的分析工具。然而，功能多寡並不等同於「適合」。適合別人的工具或方法，不一定適用於你。</p>
+    <p>為什麼需要自己分辨？因為每個投資者都有其獨特的投資風格、時間軸與風險承受能力。「適合」的判斷標準包含：投資風格契合度、資訊更新頻率是否與你的看盤節奏與決策週期一致、風險承受能力是否在你可承受範圍之內。哪些工具值得留下，哪些資訊對你真正有用，這個篩選過程只能由你自己完成，AI 無法代勞。</p>
+  </section>
+
+  <section class="step">
+    <span class="step-num">STEP 5</span>
+    <h2>最後那個決定，永遠留在自己手上</h2>
+    <p>前面四個步驟，AI 已經為我節省了大量的時間與精力。然而，最後那個「要不要行動、行動多少」的關鍵決定，我一定會牢牢掌握在自己手中。</p>
+    <p>為什麼？因為賺是自己的，輸也是自己的，這責任外包不出去。具體而言，這個「決定」包含多個層次：是否出手、投入的資金份量、以及在情況不對時何時收手，或在獲利時何時讓利潤繼續奔跑。AI 可以協助你準備好所有資訊，但按下最終決策按鈕的那一刻，永遠是你自己。這也是我一直提醒自己的紀律：AI 可以把功課的速度加到最快，但交不交這份卷、怎麼交，是你的事。</p>
+  </section>
+
+  <section class="closing">
+    <p>這 5 個步驟並非什麼獨門秘訣，它只是我運用 AI 進行投資研究的實際順序。我不是天賦異稟，只是因為對投資的熱情，比許多人更早一步去嘗試，並將這幾年摸索出來的經驗整理成這份筆記。</p>
+    <p>工具會一直換，願意早一步去學、又肯自己動腦的人，不會被時代落下。這條路我先走了一段，很高興能陪你一同前行。</p>
+  </section>
+
+  <section class="disclaimer">
+    <p>免責聲明：本內容為個人分析與教育分享，純屬個人經驗與觀點，不構成任何投資建議、招攬或買賣推介，亦不代表任何個股或市場方向的意見。投資涉及風險，過去經驗不代表未來結果，任何投資決定應在充分了解自身財務狀況與風險承受能力後，獨立作出。本文分享源自受邀出席富途 AI 發佈會的心得分享。</p>
+  </section>
+
+  <div class="sign">
+    <div class="sig"><img src="../../assets/rich/signature.jpg" alt="Rich Cheung 手寫簽名"></div>
+    <p class="sign-name">Rich Cheung 張富有</p>
+    <p class="sign-handle">@myrichstock</p>
+  </div>
+
+  <section class="bonus">
+    <span class="bonus-tag">附贈</span>
+    <h2>你的專屬 AI 投資研究守則</h2>
+    <p>這份守則，是把前面 5 個步驟的思維，轉化成你可以直接貼給任何 AI 工具（如 ChatGPT、Claude 等）的「系統指令」。貼上去之後，它會成為你自己的專屬投資研究助手。</p>
+
+    <div class="prompt-head">
+      <span class="prompt-label">系統指令</span>
+      <button class="copy-btn" id="copyBtn" type="button">複製全文</button>
+    </div>
+<pre id="promptText">你現在是我的專屬專業投資研究助手，你的目標是協助我運用系統化的 AI 投資研究思維框架，提升研究效率與判斷力。請嚴格遵守以下原則：
+
+### 你的角色與能力：
+1. 數據整理與分析：協助我快速篩選、整理、彙總財報數據、新聞公告與產業資料，將其轉化為清晰易讀的格式。
+2. 圖表與數據視覺化：協助我將財報數據、產業趨勢整理成易讀的圖表。
+3. 風險初步評估：根據我提供的資訊，進行初步的風險評估與情境模擬。
+4. 資訊來源追溯：每次提供關鍵數據或結論時，必須同時提供其原始來源（如公司公告、財報頁碼、權威媒體報導等）。
+
+### 投資研究「三不原則」：
+1. 不照單全收：你給出的任何資訊或分析，我將視為「研究起點」，而非「最終結論」。請避免使用絕對性詞語，並主動提示潛在的偏差或局限性。
+2. 不外包責任：最終的投資決策責任在我。若我要求你給出具體買賣建議、目標價或方向性預測，你必須明確拒絕，並提醒我這類判斷需要我自己做。
+3. 不模糊提問：當我提出的問題不夠清晰時，請主動引導我釐清研究目標，例如詢問我更想了解「護城河」、「成長邏輯」或「風險類型」。
+
+### 強制驗證流程：
+1. 數據驗證：當我要求你提供數據時，請務必列出數據來源，並提示我應回頭核對第一手資料。
+2. 邏輯推演：當你提供分析或推論時，請清晰地展示其邏輯鏈條，並提示我應驗證其合理性。
+3. 風險提示：在任何分析中，請主動提示相關的投資風險，例如市場波動、資訊時效性等。
+
+請記住：你的核心價值在於「算」與「整理」，我的核心價值在於「看」與「判斷」。我們是協作者，而非替代者。</pre>
+
+    <p class="note">（提醒：本框架僅供研究方法參考，不構成投資建議，任何決策請自行判斷風險）</p>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copyBtn');
+  var pre = document.getElementById('promptText');
+  var timer;
+
+  function flash(msg, ok){
+    clearTimeout(timer);
+    btn.textContent = msg;
+    if(ok) btn.classList.add('done');
+    timer = setTimeout(function(){
+      btn.textContent = '複製全文';
+      btn.classList.remove('done');
+    }, 2000);
+  }
+
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  btn.addEventListener('click', function(){
+    var text = pre.innerText;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function(){
+        flash('✓ 已複製', true);
+      }).catch(function(){
+        flash(legacyCopy(text) ? '✓ 已複製' : '請長按選取複製', true);
+      });
+    } else {
+      flash(legacyCopy(text) ? '✓ 已複製' : '請長按選取複製', true);
+    }
+  });
+})();
+</script>
+</body>
+</html>
